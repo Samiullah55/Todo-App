@@ -1,6 +1,7 @@
 import React from 'react'
 import { List,ListItem,ListItemText,ListItemAvatar,Button } from '@mui/material';
 import "../css/todo.css";
+import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
 import { db } from '../firebase';
 
 function Todos(props) {
@@ -11,7 +12,7 @@ function Todos(props) {
         </ListItemAvatar>
         <ListItemText primary="Todo" secondary={props.todo}/>
       </ListItem>
-      <Button onClick={(e)=>db.collection('Todos').doc(props.todo.id).delete()}>Delete</Button>
+      <CancelPresentationIcon onClick={()=>db.collection('Todos').doc(props.todo.id).delete()} />
 
     </List>
         
